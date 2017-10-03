@@ -8,5 +8,8 @@ public class Donut
 	private String flavor;
 	private int holeCount;
 	
-	
+	public Donut()
+	{
+		
+	}
 }
