@@ -22,13 +22,32 @@ public class ToolController
 		
 		donutList.add(temp);
 		fillTheList();
+		showTheList();
 	}
 	
 	private void showTheList()
 	{
+		String favorite = "glazed";
 		for (int index = 0; index < donutList.size(); index += 1)
 		{
+			String currentFlavor = donutList.get(index).getFlavor();		//the same as lines 35-36 combined
+			
+		//	Donut currentDonut = donutList.get(index);
+		//	String flavor = currentDonut.getFlavor();
+			
+			if (currentFlavor.contentEquals(favorite))
+			{
+				for (int woop = 0; woop < 5; woop += 1)
+				{
+					display.displayText("The best flavor ever!");
+				}
+			}
+			for (int currentLetterIndex = 0; currentLetterIndex < currentFlavor.length(); currentLetterIndex += 1)
+			{
+				display.displayText(currentFlavor.substring(currentLetterIndex, currentLetterIndex + 1));
+			}
 			display.displayText(donutList.get(index).toString());
+			
 		}
 	}
 	
