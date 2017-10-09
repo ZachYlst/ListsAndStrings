@@ -78,6 +78,12 @@ public class ToolController
 		display.displayText("The list still contains: " + donutList.size() + " items");
 		removed = donutList.set(3,  new Donut());
 		display.displayText("The " + removed.getFlavor() + " donut has been removed");
-		display.displayText(donutList);
+		
+		Donut coconut = new Donut("coconut");
+		donutList.add(coconut);
+		display.displayText("You have added a " + donutList.get(6) + " donut");
+		
+		Donut deleted = donutList.remove(3);
+		display.displayText("You have removed the " + deleted.getFlavor() + " donut from the list");
 	}
 }
