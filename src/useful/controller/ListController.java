@@ -85,6 +85,11 @@ public class ListController
 		
 		Donut deleted = donutList.remove(3);
 		display.displayText("You have removed the " + deleted.getFlavor() + " donut from the list");
+		
+		for(int loop = 0; loop <= donutList.size(); loop += 1)
+		{
+			display.displayText("I'm a Donut!");
+		}
 	}
 
 	
