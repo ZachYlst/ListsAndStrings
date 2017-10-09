@@ -22,7 +22,8 @@ public class ToolController
 		
 		donutList.add(temp);
 		fillTheList();
-		showTheList();
+//		showTheList();
+		changeTheList();
 	}
 	
 	private void showTheList()
@@ -64,5 +65,19 @@ public class ToolController
 		donutList.add(chocolate);
 		donutList.add(oldFashioned);
 		donutList.add(rustyNail);
+	}
+
+	private void changeTheList()
+	{
+		display.displayText("The list is currently this big: " + donutList.size());
+		Donut removed = donutList.remove(0);		//Removes first item in the list
+		display.displayText(removed.getFlavor() + " was removed from the list");
+		display.displayText("Now it contains " + donutList.size() + " items");
+		donutList.add(removed);		//Adds previously removed item back to the list (at the end)
+		
+		display.displayText("The list still contains: " + donutList.size() + " items");
+		removed = donutList.set(3,  new Donut());
+		display.displayText("The " + removed.getFlavor() + " donut has been removed");
+		display.displayText(donutList);
 	}
 }
